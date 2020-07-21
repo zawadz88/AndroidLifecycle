@@ -10,7 +10,7 @@ import timber.log.Timber
 
 open class BaseFragment(@LayoutRes layoutResId: Int): Fragment(layoutResId) {
 
-    private val logtag: String
+    protected open val logtag: String
         get() = this::class.java.name
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,4 +58,5 @@ open class BaseFragment(@LayoutRes layoutResId: Int): Fragment(layoutResId) {
         super.onDestroy()
         Timber.tag(logtag).d("onDestroy")
     }
+
 }
