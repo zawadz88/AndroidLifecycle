@@ -8,6 +8,7 @@ import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_main.defaultActivityButton
 import kotlinx.android.synthetic.main.activity_main.dialogButton
 import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
+import kotlinx.android.synthetic.main.activity_main.replaceFragmentButton
 import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
 
 class MainActivity : BaseActivity() {
@@ -29,6 +30,13 @@ class MainActivity : BaseActivity() {
         }
         dialogFragmentButton.setOnClickListener {
             MyDialogFragment().show(supportFragmentManager, null)
+        }
+        replaceFragmentButton.setOnClickListener {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, NewFragment())
+                .addToBackStack(null)
+                .commit()
         }
 
         savedInstanceState ?: supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, MainFragment()).commit()
