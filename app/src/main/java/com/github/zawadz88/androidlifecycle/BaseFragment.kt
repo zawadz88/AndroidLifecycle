@@ -34,6 +34,11 @@ open class BaseFragment(@LayoutRes layoutResId: Int): Fragment(layoutResId) {
         Timber.tag(logtag).d("onStart")
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Timber.tag(logtag).d("onSaveInstanceState")
+    }
+
     override fun onResume() {
         super.onResume()
         Timber.tag(logtag).d("onResume")

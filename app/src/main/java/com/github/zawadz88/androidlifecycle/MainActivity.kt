@@ -16,14 +16,18 @@ import kotlinx.android.synthetic.main.activity_main.viewPagerInNewModeActivityBu
 
 class MainActivity : BaseActivity() {
 
+    companion object {
+        private const val REQUEST_CODE = 1234
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         defaultActivityButton.setOnClickListener {
-            startActivity(Intent(this, DefaultActivity::class.java))
+            startActivityForResult(Intent(this, DefaultActivity::class.java), REQUEST_CODE)
         }
         translucentActivityButton.setOnClickListener {
-            startActivity(Intent(this, TranslucentActivity::class.java))
+            startActivityForResult(Intent(this, TranslucentActivity::class.java), REQUEST_CODE)
         }
         viewPagerInLegacyModeActivityButton.setOnClickListener {
             startActivity(Intent(this, ViewPagerWithLegacyAdapterModeActivity::class.java))
