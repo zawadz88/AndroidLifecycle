@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPager2ActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInLegacyModeActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInNewModeActivityButton
+import kotlinx.android.synthetic.main.activity_main.wrongFragmentReplaceActivityButton
 
 class MainActivity : BaseActivity() {
 
@@ -37,6 +38,9 @@ class MainActivity : BaseActivity() {
         }
         viewPager2ActivityButton.setOnClickListener {
             startActivity(Intent(this, ViewPager2Activity::class.java))
+        }
+        wrongFragmentReplaceActivityButton.setOnClickListener {
+            startActivity(Intent(this, WrongFragmentReplaceActivity::class.java))
         }
         dialogButton.setOnClickListener {
             AlertDialog.Builder(this)
