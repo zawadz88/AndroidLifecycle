@@ -47,6 +47,8 @@ dependencies {
     // Lifecycles only (without ViewModel or LiveData)
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
 
+    implementation "androidx.lifecycle:lifecycle-process:2.2.0"
+
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
 
