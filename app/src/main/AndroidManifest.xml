@@ -13,9 +13,9 @@
         <receiver
             android:name=".MyReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="lifecycle.TEST"/>
+                <action android:name="lifecycle.TEST" />
             </intent-filter>
         </receiver>
 
@@ -24,7 +24,10 @@
         <activity android:name=".ViewPagerWithNewAdapterModeActivity" />
         <activity android:name=".ViewPager2Activity" />
         <activity android:name=".WrongFragmentReplaceActivity" />
-        <activity android:name=".TranslucentActivity" android:theme="@style/AppTheme.Translucent"/>
+        <activity android:name=".ViewModelActivity" />
+        <activity
+            android:name=".TranslucentActivity"
+            android:theme="@style/AppTheme.Translucent" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

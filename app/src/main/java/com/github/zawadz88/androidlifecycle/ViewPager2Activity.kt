@@ -5,11 +5,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import kotlinx.android.synthetic.main.activity_view_pager2.viewPager
 
-class ViewPager2Activity : BaseActivity() {
+class ViewPager2Activity : BaseActivity(R.layout.activity_view_pager2) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_pager2)
         viewPager.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount(): Int = 5
 

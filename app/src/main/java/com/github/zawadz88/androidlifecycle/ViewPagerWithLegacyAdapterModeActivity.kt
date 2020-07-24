@@ -5,11 +5,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_view_pager.viewPager
 
-class ViewPagerWithLegacyAdapterModeActivity : BaseActivity() {
+class ViewPagerWithLegacyAdapterModeActivity : BaseActivity(R.layout.activity_view_pager) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_pager)
         @Suppress("DEPRECATION")
         viewPager.adapter = object : FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_SET_USER_VISIBLE_HINT) {
 

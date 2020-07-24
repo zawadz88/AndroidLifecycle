@@ -2,17 +2,17 @@ package com.github.zawadz88.androidlifecycle
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import timber.log.Timber
 
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity(contentLayoutId) {
 
     private val tag: String
         get() = this::class.java.name
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         Timber.tag(tag).d("onCreate")
     }
 
@@ -33,6 +33,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        // For more info when this gets called see: https://developer.android.com/reference/android/app/Activity#onSaveInstanceState(android.os.Bundle)
         Timber.tag(tag).d("onSaveInstanceState")
     }
 

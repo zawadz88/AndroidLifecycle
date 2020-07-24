@@ -10,12 +10,13 @@ import kotlinx.android.synthetic.main.activity_main.dialogButton
 import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
 import kotlinx.android.synthetic.main.activity_main.replaceFragmentButton
 import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
+import kotlinx.android.synthetic.main.activity_main.viewModelActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPager2ActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInLegacyModeActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInNewModeActivityButton
 import kotlinx.android.synthetic.main.activity_main.wrongFragmentReplaceActivityButton
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(R.layout.activity_main) {
 
     companion object {
         private const val REQUEST_CODE = 1234
@@ -41,6 +42,9 @@ class MainActivity : BaseActivity() {
         }
         wrongFragmentReplaceActivityButton.setOnClickListener {
             startActivity(Intent(this, WrongFragmentReplaceActivity::class.java))
+        }
+        viewModelActivityButton.setOnClickListener {
+            startActivity(Intent(this, ViewModelActivity::class.java))
         }
         dialogButton.setOnClickListener {
             AlertDialog.Builder(this)
