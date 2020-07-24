@@ -53,11 +53,19 @@
             android:layout_height="wrap_content"
             android:text="Open wrong Fragment replace activity"
             tools:ignore="HardcodedText" />
+
         <Button
             android:id="@+id/viewModelActivityButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Open ViewModel activity"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/lifecycleOwnerActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open LifecycleOwner activity"
             tools:ignore="HardcodedText" />
 
         <Button

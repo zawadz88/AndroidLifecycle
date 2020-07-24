@@ -8,6 +8,7 @@ import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_main.defaultActivityButton
 import kotlinx.android.synthetic.main.activity_main.dialogButton
 import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
+import kotlinx.android.synthetic.main.activity_main.lifecycleOwnerActivityButton
 import kotlinx.android.synthetic.main.activity_main.replaceFragmentButton
 import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewModelActivityButton
@@ -45,6 +46,9 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         }
         viewModelActivityButton.setOnClickListener {
             startActivity(Intent(this, ViewModelActivity::class.java))
+        }
+        lifecycleOwnerActivityButton.setOnClickListener {
+            startActivity(Intent(this, LifecycleOwnerActivity::class.java))
         }
         dialogButton.setOnClickListener {
             AlertDialog.Builder(this)
