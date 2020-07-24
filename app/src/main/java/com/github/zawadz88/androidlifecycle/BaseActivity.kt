@@ -56,4 +56,9 @@ open class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity(con
         super.onActivityResult(requestCode, resultCode, data)
         Timber.tag(tag).d("onActivityResult")
     }
+
+    override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
+        super.onTopResumedActivityChanged(isTopResumedActivity)
+        Timber.tag(tag).d("onTopResumedActivityChanged: $isTopResumedActivity")
+    }
 }
