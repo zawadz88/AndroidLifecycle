@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.defaultActivityButton
 import kotlinx.android.synthetic.main.activity_main.dialogButton
 import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
 import kotlinx.android.synthetic.main.activity_main.lifecycleOwnerActivityButton
+import kotlinx.android.synthetic.main.activity_main.livedataActivityButton
 import kotlinx.android.synthetic.main.activity_main.replaceFragmentButton
 import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewModelActivityButton
@@ -53,6 +54,9 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         }
         autocloseActivityButton.setOnClickListener {
             startActivity(Intent(this, AutocloseActivity::class.java))
+        }
+        livedataActivityButton.setOnClickListener {
+            startActivity(Intent(this, LiveDataActivity::class.java))
         }
         dialogButton.setOnClickListener {
             AlertDialog.Builder(this)

@@ -22,6 +22,7 @@
         <activity android:name=".AutocloseActivity" />
         <activity android:name=".DefaultActivity" />
         <activity android:name=".LifecycleOwnerActivity" />
+        <activity android:name=".LiveDataActivity" />
         <activity android:name=".ViewPagerWithLegacyAdapterModeActivity" />
         <activity android:name=".ViewPagerWithNewAdapterModeActivity" />
         <activity android:name=".ViewPager2Activity" />

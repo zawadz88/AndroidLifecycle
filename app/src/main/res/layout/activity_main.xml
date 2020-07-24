@@ -67,11 +67,19 @@
             android:layout_height="wrap_content"
             android:text="Open LifecycleOwner activity"
             tools:ignore="HardcodedText" />
+
         <Button
             android:id="@+id/autocloseActivityButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Open auto-close activity"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/livedataActivityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open LiveData activity"
             tools:ignore="HardcodedText" />
 
         <Button
