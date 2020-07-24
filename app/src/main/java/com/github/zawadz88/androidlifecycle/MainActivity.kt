@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.activity_main.autocloseActivityButton
 import kotlinx.android.synthetic.main.activity_main.defaultActivityButton
 import kotlinx.android.synthetic.main.activity_main.dialogButton
 import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
@@ -49,6 +50,9 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         }
         lifecycleOwnerActivityButton.setOnClickListener {
             startActivity(Intent(this, LifecycleOwnerActivity::class.java))
+        }
+        autocloseActivityButton.setOnClickListener {
+            startActivity(Intent(this, AutocloseActivity::class.java))
         }
         dialogButton.setOnClickListener {
             AlertDialog.Builder(this)

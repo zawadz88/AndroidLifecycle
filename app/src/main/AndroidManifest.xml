@@ -19,6 +19,7 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".AutocloseActivity" />
         <activity android:name=".DefaultActivity" />
         <activity android:name=".LifecycleOwnerActivity" />
         <activity android:name=".ViewPagerWithLegacyAdapterModeActivity" />
