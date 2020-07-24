@@ -9,6 +9,7 @@
 
     <style name="AppTheme.Translucent">
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">#bbffffff</item>
     </style>
 
 </resources>
