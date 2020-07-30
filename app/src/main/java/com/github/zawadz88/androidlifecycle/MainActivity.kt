@@ -3,6 +3,9 @@ package com.github.zawadz88.androidlifecycle
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.activity_main.autocloseActivityButton
@@ -18,6 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.viewPager2ActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInLegacyModeActivityButton
 import kotlinx.android.synthetic.main.activity_main.viewPagerInNewModeActivityButton
 import kotlinx.android.synthetic.main.activity_main.wrongFragmentReplaceActivityButton
+import timber.log.Timber
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -81,10 +85,65 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
 class MyDialogFragment : DialogFragment() {
 
+    private val logtag: String = MyDialogFragment::class.java.name
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog = AlertDialog.Builder(requireContext())
         .setMessage("I'm a DialogFragment")
         .setPositiveButton("OK") { _, _ -> }
-        .create()
+        .create().also {
+            Timber.tag(logtag).d("onCreateDialog")
+        }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Timber.tag(logtag).d("onCreate")
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        Timber.tag(logtag).d("onActivityCreated")
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = super.onCreateView(inflater, container, savedInstanceState)
+        Timber.tag(logtag).d("onCreateView")
+        return view
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.tag(logtag).d("onStart")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Timber.tag(logtag).d("onSaveInstanceState")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.tag(logtag).d("onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.tag(logtag).d("onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.tag(logtag).d("onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Timber.tag(logtag).d("onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.tag(logtag).d("onDestroy")
+    }
 }
 
 
