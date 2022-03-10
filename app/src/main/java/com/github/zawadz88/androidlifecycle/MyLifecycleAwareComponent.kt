@@ -1,19 +1,17 @@
 package com.github.zawadz88.androidlifecycle
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import timber.log.Timber
 
-class MyLifecycleAwareComponent: LifecycleObserver {
+class MyLifecycleAwareComponent: DefaultLifecycleObserver {
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun addLocationListener() {
+    override fun onResume(owner: LifecycleOwner) {
         Timber.d("Listening for location updates")
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun removeLocationListener() {
+    override fun onPause(owner: LifecycleOwner) {
         Timber.d("Stopped listening for location updates")
     }
+
 }

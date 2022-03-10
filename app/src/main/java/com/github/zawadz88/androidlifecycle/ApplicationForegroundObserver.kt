@@ -1,22 +1,18 @@
 package com.github.zawadz88.androidlifecycle
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.*
 import timber.log.Timber
 
 /**
  * @see https://proandroiddev.com/android-processlifecycleowner-by-example-2f965061b9da
  */
-class ApplicationForegroundObserver : LifecycleObserver {
+class ApplicationForegroundObserver : DefaultLifecycleObserver {
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onForeground() {
+    override fun onStart(owner: LifecycleOwner) {
         Timber.d("I am in foreground!")
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onBackground() {
+    override fun onStop(owner: LifecycleOwner) {
         Timber.d("I am in background :(")
     }
 }
