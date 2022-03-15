@@ -10,7 +10,7 @@ class MyApplication : Application() {
         super.onCreate()
         Timber.uprootAll()
         Timber.plant(Timber.DebugTree())
-        Timber.d("onCreate")
+        Timber.tag(this::class.java.name).d("onCreate")
         ProcessLifecycleOwner
             .get()
             .lifecycle
