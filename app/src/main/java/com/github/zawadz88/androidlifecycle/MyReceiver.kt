@@ -8,6 +8,6 @@ import timber.log.Timber
 class MyReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        Timber.d("onReceive: $intent")
+        Timber.tag(this::class.java.name).d("onReceive: $intent")
     }
 }
