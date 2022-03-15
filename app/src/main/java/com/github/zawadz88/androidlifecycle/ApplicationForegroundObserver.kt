@@ -8,11 +8,14 @@ import timber.log.Timber
  */
 class ApplicationForegroundObserver : DefaultLifecycleObserver {
 
+    private val logtag: String = this::class.java.name
+
     override fun onStart(owner: LifecycleOwner) {
-        Timber.d("I am in foreground!")
+        Timber.tag(logtag).d("I am in foreground!")
     }
 
     override fun onStop(owner: LifecycleOwner) {
-        Timber.d("I am in background :(")
+        Timber.tag(logtag).d("I am in background :(")
     }
 }
+

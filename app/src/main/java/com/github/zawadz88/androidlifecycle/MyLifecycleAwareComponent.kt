@@ -4,10 +4,9 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import timber.log.Timber
 
-class MyLifecycleAwareComponent: DefaultLifecycleObserver {
+class MyLifecycleAwareComponent : DefaultLifecycleObserver {
 
-    private val logtag: String
-        get() = this::class.java.name
+    private val logtag: String = this::class.java.name
 
     override fun onResume(owner: LifecycleOwner) {
         Timber.tag(logtag).d("Listening for location updates")
