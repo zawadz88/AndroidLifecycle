@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/legacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Legacy one"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/legacyWithReceiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Legacy with receiver"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/androidxActivityResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AndroidX ActivityResult"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

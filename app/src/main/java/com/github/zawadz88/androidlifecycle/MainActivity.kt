@@ -8,19 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.activity_main.autocloseActivityButton
-import kotlinx.android.synthetic.main.activity_main.defaultActivityButton
-import kotlinx.android.synthetic.main.activity_main.dialogButton
-import kotlinx.android.synthetic.main.activity_main.dialogFragmentButton
-import kotlinx.android.synthetic.main.activity_main.lifecycleOwnerActivityButton
-import kotlinx.android.synthetic.main.activity_main.livedataActivityButton
-import kotlinx.android.synthetic.main.activity_main.replaceFragmentButton
-import kotlinx.android.synthetic.main.activity_main.translucentActivityButton
-import kotlinx.android.synthetic.main.activity_main.viewModelActivityButton
-import kotlinx.android.synthetic.main.activity_main.viewPager2ActivityButton
-import kotlinx.android.synthetic.main.activity_main.viewPagerInLegacyModeActivityButton
-import kotlinx.android.synthetic.main.activity_main.viewPagerInNewModeActivityButton
-import kotlinx.android.synthetic.main.activity_main.wrongFragmentReplaceActivityButton
+import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
@@ -78,8 +66,12 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
                 .addToBackStack(null)
                 .commit()
         }
+        startForResult.setOnClickListener {
+            startActivity(Intent(this, StartForResultActivity::class.java))
+        }
 
-        savedInstanceState ?: supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, MainFragment()).commit()
+        savedInstanceState ?: supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, MainFragment()).commit()
     }
 }
 
@@ -87,12 +79,13 @@ class MyDialogFragment : DialogFragment() {
 
     private val logtag: String = MyDialogFragment::class.java.name
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog = AlertDialog.Builder(requireContext())
-        .setMessage("I'm a DialogFragment")
-        .setPositiveButton("OK") { _, _ -> }
-        .create().also {
-            Timber.tag(logtag).d("onCreateDialog")
-        }
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
+        AlertDialog.Builder(requireContext())
+            .setMessage("I'm a DialogFragment")
+            .setPositiveButton("OK") { _, _ -> }
+            .create().also {
+                Timber.tag(logtag).d("onCreateDialog")
+            }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,7 +97,11 @@ class MyDialogFragment : DialogFragment() {
         Timber.tag(logtag).d("onActivityCreated")
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
         Timber.tag(logtag).d("onCreateView")
         return view

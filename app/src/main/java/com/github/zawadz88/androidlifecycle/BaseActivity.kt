@@ -8,7 +8,7 @@ import timber.log.Timber
 
 open class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity(contentLayoutId) {
 
-    private val tag: String
+    protected val tag: String
         get() = this::class.java.name
 
     override fun onCreate(savedInstanceState: Bundle?) {
